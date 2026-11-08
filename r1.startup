@@ -1,0 +1,7 @@
+# Offline telepítés a megosztott mappából
+apt-get install -y /shared/*.deb
+# Alapvető beállítások (SSH és forgalomirányítás)
+echo "root:admin" | chpasswd
+sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+/etc/init.d/ssh start
+/etc/init.d/frr start

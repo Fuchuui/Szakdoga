@@ -1,0 +1,38 @@
+{
+    "vlans": [
+        {
+            "vlan_id": 10,
+            "ip_address": "192.168.10.1",
+            "subnet_mask": "24",
+            "dhcp_start": "192.168.10.10",
+            "dhcp_end": "192.168.10.50"
+        },
+        {
+            "vlan_id": 20,
+            "ip_address": "192.168.20.1",
+            "subnet_mask": "24",
+            "dhcp_start": "192.168.20.10",
+            "dhcp_end": "192.168.20.50"
+        },
+        {
+            "vlan_id": 30,
+            "ip_address": "192.168.30.1",
+            "subnet_mask": "30",
+            "dhcp_start": "192.168.30.9",
+            "dhcp_end": "192.168.30.10"
+        }
+    ],
+    "firewall_rules": [
+        {
+            "source_vlan": 10,
+            "destination_vlan": 30,
+            "action": "permit"
+        },
+        {
+            "source_vlan": 20,
+            "destination_vlan": 30,
+            "action": "permit"
+        }
+    ],
+    "qos_rules": []
+}
